@@ -1,0 +1,20 @@
+{
+  "v": 1,
+  "kind": "fallforge-mesh",
+  "count": 2,
+  "members": [
+    {
+      "node": "review-1b",
+      "useCase": "code-review",
+      "manifestHash": "41a7c0a902725a4e142410d401328f0ed7ac319ddf6a8456e438291fff87d57a"
+    },
+    {
+      "node": "triage-1b",
+      "useCase": "support-triage",
+      "manifestHash": "a6224303c927d40d46bae0c0c42a24ba321b71ff81b36c8c25a7020c99c1c60d"
+    }
+  ],
+  "sharedLimbBudget": 20,
+  "scope": "the frontier is a shared, budget-bounded limb; no node dominates and none is a private higher authority",
+  "hash": "2cc337a5967f9cd273a4589e6dacddbcfc8317e23777fe7730a73d745c5c6af9"
+}

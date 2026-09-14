@@ -1,0 +1,105 @@
+{
+  "task": "Read this support message. Reply with ONLY {\"category\": one of refund|shipping|account|bug|other}. No prose.",
+  "message": "My subscription was double-charged this month on order 5512, please refund the extra charge.",
+  "crossVerify": {
+    "models": [
+      {
+        "model": "triage-1b",
+        "answer": "{\"category\":\"refund\"}"
+      },
+      {
+        "model": "qwen2.5:7b",
+        "answer": "{\"category\":\"refund\"}"
+      },
+      {
+        "model": "qwen2.5:14b",
+        "answer": "{\"category\":\"refund\"}"
+      }
+    ],
+    "verdict": {
+      "ok": true,
+      "verified": true,
+      "answer": "{\"category\":\"refund\"}",
+      "agree": 3,
+      "of": 3,
+      "why": "3 of 3 nodes agree"
+    }
+  },
+  "route": {
+    "support": {
+      "ok": true,
+      "route": "nodes",
+      "nodes": [
+        "triage-1b"
+      ],
+      "why": "1 member(s) serve support-triage"
+    },
+    "legal": {
+      "ok": true,
+      "route": "shared-limb",
+      "nodes": [],
+      "why": "no member serves legal-review — the mesh borrows the shared frontier"
+    }
+  },
+  "couples": [
+    {
+      "pair": "triage-1b × qwen2.5:7b",
+      "ok": true,
+      "state": "SOVEREIGN",
+      "sound": true,
+      "why": "checked both ways, balanced, agreeing most but not all of the time — a sound couple",
+      "rec": {
+        "interactions": 50,
+        "aChecks": 30,
+        "bChecks": 28,
+        "agreements": 41
+      }
+    },
+    {
+      "pair": "a monopole (one checks all)",
+      "ok": true,
+      "state": "EXTRACTIVE",
+      "sound": false,
+      "why": "one node does most of the checking — the coupling is lopsided",
+      "rec": {
+        "interactions": 50,
+        "aChecks": 50,
+        "bChecks": 5,
+        "agreements": 40
+      }
+    },
+    {
+      "pair": "two clones (always agree)",
+      "ok": true,
+      "state": "MERGED",
+      "sound": false,
+      "why": "the two agree every time — correlated, not independent; a merged pair gives false confidence",
+      "rec": {
+        "interactions": 50,
+        "aChecks": 25,
+        "bChecks": 25,
+        "agreements": 50
+      }
+    }
+  ],
+  "borrows": [
+    {
+      "cost": 8,
+      "allowed": true,
+      "why": "within the shared budget",
+      "remaining": 12
+    },
+    {
+      "cost": 9,
+      "allowed": true,
+      "why": "within the shared budget",
+      "remaining": 3
+    },
+    {
+      "cost": 7,
+      "allowed": false,
+      "why": "the shared frontier budget is spent — the mesh answers on its own",
+      "remaining": 3
+    }
+  ]
+}
