@@ -1,5 +1,13 @@
 # FallForge Mesh
 
+> **Partly superseded, not deleted.** This repo's `quorum()` wall (exact-agreement plurality) is
+> superseded by [fallforgecell](https://github.com/sjgant80-hub/fallforgecell) (Veridia)'s
+> `adjudicate()` — per-field verdicts, honest SPLIT escalation, and an independence check `quorum()`
+> never had. Its other two walls — `coupleHealth` (pairwise longitudinal balance) and the shared
+> frontier budget — have no equivalent elsewhere and were carried forward fresh into the converging
+> [fallforge](https://github.com/sjgant80-hub/fallforge) hub (`chain.html`). This page stays live
+> and gated as a historical record of layer 5 of the original sovereign-node factory.
+
 **LIVE: https://sjgant80-hub.github.io/fallforge-mesh/**
 
 Sovereign nodes, coupled — layer 5 of the sovereign-node factory. Couple your
